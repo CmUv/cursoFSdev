@@ -1,0 +1,32 @@
+Instalación de nvm, node.js y npm
+     Paso 1 : Abrir consola e iniciar sesión con nuestro usuario NO_ROOT, si no sabes, haz clic aquí
+
+     Paso 2 : Instala cURL (una herramienta que se usa para descargar contenido de Internet en la línea de comandos) con: 
+
+sudo apt-get install curl
+     Paso 3 : Instala nvm con: 
+
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+     NOTA : En el momento de redactar este artículo, NVM v0.39.0 es la versión más reciente disponible. Puedes consultar la página del proyecto de GitHub para obtener la última versión de NVM y ajustar el comando anterior para incluir la versión más reciente.
+
+     Paso 4 : Para verificar la instalación, escribe: command -v nvm... esto debería devolver "nvm"; si recibes "No se encuentra el comando" o ninguna respuesta, cierra el terminal actual, vuelve a abrirlo e inténtalo de nuevo. Obtén más información en el repositorio de GitHub de nvm.
+
+     Paso 5 : Enumera qué versiones de Node están instaladas actualmente (en este momento no debe haber ninguna):
+
+nvm ls
+     Paso 6 : Instale las versiones de LTS actual y estable de Node.js. En un paso posterior, aprenderá a cambiar entre las versiones activas de Node.js con un comando nvm.
+
+Instale la versión LTS estable actual de Node.js (recomendada para aplicaciones de producción):
+nvm install --lts
+Instale la versión actual de Node.js (para probar las características y mejoras de Node.js más recientes, pero con más probabilidad de presentar problemas):
+nvm install node
+     Paso 7 : Enumera qué versiones de Node están instaladas: nvm ls... ahora deberías ver las dos versiones que acabas de instalar.
+
+     Paso 8 : Comprueba que Node.js está instalado y la versión predeterminada actualmente con: node --version. Después, comprueba que también tienes npm, con: 
+
+npm --version
+     (También puedes usar which node o which npm para ver la ruta de acceso utilizada para las versiones predeterminadas).
+
+     Paso 9 : Para cambiar la versión de Node.js que deseas usar para un proyecto, crea un directorio de proyecto mkdir NodeTest, escribe el directorio cd NodeTest y, a continuación, escribe nvm use node, para cambiar a la versión actual, o bien nvm use --lts para cambiar a la versión de LTS. También puedes usar el número específico de cualquier versión adicional que hayas instalado, como nvm use v8.2.1. (Para enumerar todas las versiones de Node.js disponibles, usa el comando: nvm ls-remote).
+
+     Si usas NVM para instalar Node.js y NPM, no es necesario usar el comando SUDO para instalar nuevos paquetes.

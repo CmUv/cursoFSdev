@@ -1,0 +1,4 @@
+IDe: Vscode
+navegador: Chrome
+	nota: ** Utilizare Brave omo navegador de prueba
+WSL: Ubuntu 20.04

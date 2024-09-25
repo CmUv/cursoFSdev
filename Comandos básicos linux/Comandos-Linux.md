@@ -1,8 +1,7 @@
-Tarea: Práctica de Comandos Básicos de Linux
-Objetivo: Aprender y practicar el uso de comandos básicos en la terminal de Linux, asegurando que cada comando se ejecute correctamente con diferentes parámetros.
+# Tarea: Práctica de Comandos Básicos de Linux
+## Objetivo: Aprender y practicar el uso de comandos básicos en la terminal de Linux, asegurando que cada comando se ejecute correctamente con diferentes parámetros.
 
-Instrucciones:
-
+## Instrucciones:
 Utiliza la terminal de Linux (o WSL si estás en Windows) para ejecutar cada uno de los comandos listados a continuación:
 
 1. ls - Listar el contenido de un directorio

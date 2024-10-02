@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>selectores2</title>
+
+    <style>
+        /* Selecciona todos los elementos <p> que están dentro de un <div> */
+        div p {
+          color: #158f15; /* Cambia el color del texto a un verde (#158f15) */
+        }
+
+        /* Selecciona los elementos <div> que son hijos directos de otro <div> */
+        div > div {
+          background: rgb(246, 202, 210); /* Cambia el fondo a un rosa claro (rgb(246, 202, 210)) */
+        }
+
+        /* Selecciona los elementos con la clase 'es' */
+        .es {
+          background: rgb(196, 150, 150); /* Cambia el fondo a un rosa más oscuro (rgb(196, 150, 150)) */
+        }
+
+        /* Selecciona el elemento <section> que viene inmediatamente después de un <div> */
+        div + section {
+          background: #f0becf; /* Cambia el fondo a un tono rosado (#f0becf) */
+        }
+
+        /* Selecciona los elementos <p> que son hermanos posteriores de un <div> */
+        div ~ p {
+          color: #0ea167; /* Cambia el color del texto a un tono verde (#0ea167) */
+        }
+    </style>
+
+</head>
+<body>
+    <div>
+        <div>
+          <p>Practica Carlos</p> <!-- Este <p> será de color verde (#158f15) porque está dentro de un <div> -->
+          <div class="es">Es</div> <!-- Este <div> tendrá un fondo rosa claro porque es hijo directo de un <div> -->
+        </div>
+    </div>
+    <p>Clase de selectores 1</p> <!-- Este <p> será de color verde (#0ea167) porque es hermano de un <div> -->
+    <p>Clase de selectores 2</p> <!-- También tendrá color verde (#0ea167) por la misma razón -->
+    <section>
+        Es lo mejor <!-- Este <section> tendrá un fondo rosado claro (#f0becf) porque está inmediatamente después de un <div> -->
+    </section>
+    <div>
+        Master <!-- Este <div> no será afectado por ningún selector del <style> actual -->
+    </div>
+</body>
+</html>

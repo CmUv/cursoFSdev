@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectores 3</title>
+
+    <style>
+        /* Aplica un color rosa pálido (#F6C7C2) a todo el texto dentro de las etiquetas <p> */
+        p {
+          color: rgb(246, 199, 194);
+        }
+
+        /* Cambia el color de la primera letra de cada párrafo a teal (verde azulado) */
+        p::first-letter {
+          color: teal;
+        }
+
+        /* Añade el emoji "🖥️" antes del contenido de cada párrafo */
+        p::before {
+          content: "🖥️"; 
+        }
+
+        /* Añade el emoji "📝" después del contenido de cada párrafo */
+        p::after {
+          content: "📝"; 
+        }
+
+        /* Cambia el color del texto de los párrafos a azul claro (skyblue) cuando el usuario pasa el mouse sobre ellos */
+        p:hover {
+          color: skyblue;
+        }
+
+        /* Aplica el color púrpura (#C768C7) al tercer párrafo que es hijo directo de <div> */
+        div p:nth-child(3) {
+          color: rgb(199, 104, 199); 
+        }
+
+        /* Cambia el color del texto del placeholder (texto de ayuda) en los campos de entrada a color tomate */
+        ::placeholder {
+          color: tomato;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Primer párrafo con emojis antes y después del texto, y con la primera letra en teal -->
+    <p>Hola Mundo html</p>
+
+    <!-- Segundo bloque con tres párrafos, el tercero es púrpura -->
+    <div>
+        <p>Carlos practica</p>
+        <p>Sistemas expertos</p>
+        <p>Excelente metodología</p> <!-- Este párrafo se mostrará en color púrpura -->
+    </div>
+
+    <!-- Campo de entrada con texto de ayuda (placeholder) que aparece en color tomate -->
+    <input type="text" placeholder="Ingrese nombre">
+</body>
+</html>

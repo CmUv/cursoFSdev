@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Display flexbox</title>
+  <style>
+    /* 
+    El contenedor usa Flexbox para organizar los elementos en su interior.
+    */
+    .container {
+      display: flex;                /* Activa el modo Flexbox en el contenedor */
+      background: rgb(255, 228, 232); /* Color de fondo rosado claro */
+      justify-content: center;      /* Centra los elementos horizontalmente */
+      align-items: center;          /* Centra los elementos verticalmente */
+      height: 200px;                /* Altura del contenedor */
+      flex-direction: column;       /* Coloca los elementos en una columna vertical */
+    }
+
+    /* 
+    Todos los elementos hijos (.item) tienen el mismo tamaño
+    y un fondo azul por defecto.
+    */
+    .item {
+      width: 30px;                  /* Ancho de 30px */
+      height: 30px;                 /* Altura de 30px */
+      background: blue;             /* Color de fondo azul por defecto */
+    }
+
+    /* 
+    Selecciona los elementos impares (1ro, 3ro, ...) y les cambia el fondo a cian.
+    nth-child(2n + 1) selecciona los elementos impares dentro del contenedor.
+    */
+    .container .item:nth-child(2n + 1) {
+      background: cyan;             /* Color de fondo cian para los elementos impares */
+    }
+  </style>
+</head>
+<body>
+  <!-- Contenedor que usa Flexbox para organizar los elementos -->
+  <div class="container">
+    <!-- Cuatro elementos que alternan sus colores entre azul y cian -->
+    <div class="item"></div> <!-- Elemento 1: Color cian (por nth-child(2n + 1)) -->
+    <div class="item"></div> <!-- Elemento 2: Color azul (color por defecto) -->
+    <div class="item"></div> <!-- Elemento 3: Color cian (por nth-child(2n + 1)) -->
+    <div class="item"></div> <!-- Elemento 4: Color azul (color por defecto) -->
+  </div>
+</body>
+</html>

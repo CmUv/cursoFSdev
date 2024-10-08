@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modelo Caja</title>
+  <style>
+    /*
+    Estilos aplicados a todos los elementos <div>.
+    Se utiliza el modelo de caja de CSS y se incluye box-sizing para 
+    controlar cómo se calcula el tamaño total de las cajas.
+    */
+    div {
+      width: 100px;                   /* Ancho de la caja (100px) */
+      height: 100px;                  /* Altura de la caja (100px) */
+      background: rgb(244, 207, 244); /* Fondo rosado claro */
+      padding: 20px;                  /* Relleno interno de 20px alrededor del contenido */
+      box-sizing: border-box;         /* Incluye el padding y el borde dentro del tamaño total */
+      border: 5px solid rgb(255, 0, 128); /* Borde rosa fuerte de 5px */
+      margin: 20px;                   /* Margen externo de 20px alrededor de la caja */
+    }
+  </style>
+</head>
+<body>
+  <!-- Primera caja que se verá con el estilo definido -->
+  <div>Caja</div>
+  <!-- Segunda caja con el mismo estilo -->
+  <div>Prueba git</div>
+</body>
+</html>

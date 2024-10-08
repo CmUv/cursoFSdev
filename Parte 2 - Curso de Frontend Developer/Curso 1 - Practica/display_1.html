@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Display 1</title>
+  <style>
+    /* Quita los márgenes predeterminados del body para que los elementos comiencen desde el borde */
+    body {
+      margin: 0;
+    }
+
+    /* Estilos para los elementos <div>, que tienen display block por defecto */
+    div {
+      background: pink; /* Fondo rosa */
+      width: 500px;     /* Ancho de 500px */
+      height: 75px;     /* Alto de 75px */
+      margin: 20px;     /* Espacio de 20px alrededor */
+    }
+
+    /* Estilos para los enlaces <a>, que tienen display inline por defecto */
+    a {
+      background: #b1e7f7; /* Fondo azul claro */
+      width: 200px;        /* NO se aplica porque los elementos inline no aceptan width */
+      height: 200px;       /* NO se aplica porque los elementos inline no aceptan height */
+      margin: 20px;        /* El margen se aplica solo horizontalmente (izquierda y derecha), no verticalmente */
+    }
+
+    /* Estilos para los botones <button>, que tienen display inline-block por defecto */
+    button {
+      background: slateblue; /* Fondo azul pizarra */
+      width: 200px;          /* Ancho de 200px, ya que inline-block permite establecer ancho */
+      height: 100px;         /* Alto de 100px, también permitido en inline-block */
+    }
+  </style>
+</head>
+<body>
+  <!-- El <div> se comporta como un bloque, ocupando todo el ancho disponible en su contenedor -->
+  <div>BLOQUE</div>
+  
+  <!-- Los <a> son elementos inline, por lo que las propiedades width y height no se aplican -->
+  <a href="/">INLINE</a>
+
+  <!-- El <button> se comporta como inline-block, lo que permite ajustar width y height -->
+  <button>INLINE BLOCK</button>
+  
+  <!-- Otro enlace inline que sigue el mismo comportamiento que el anterior -->
+  <a href="/">INLINE 2</a>
+</body>
+</html>

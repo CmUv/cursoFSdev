@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Especificidad</title>
+  
+  <style>
+    /* 
+    Esta regla selecciona el elemento que tiene el ID "carlos".
+    Los selectores de ID tienen una especificidad alta, lo que significa que
+    si hay un conflicto con otros selectores, esta regla tendrá prioridad.
+    */
+    #carlos {
+      color: brown; /* Asigna el color marrón al texto */
+    }
+
+    /* 
+    Esta regla selecciona los elementos que tienen la clase "pruebas".
+    Los selectores de clase tienen una especificidad menor que los IDs,
+    por lo que esta regla será sobrescrita si un ID aplica a ese mismo elemento.
+    */
+    .pruebas {
+      color: SpringGreen; /* Asigna el color verde a los elementos con la clase "pruebas" */
+    }
+  </style>
+
+</head>
+<body>
+  <!-- 
+  Este <div> tiene tanto el ID "carlos" como la clase "prueba". 
+  Dado que el ID tiene una mayor especificidad que la clase, el color marrón (brown) definido
+  por la regla del ID #carlos será aplicado, en lugar del color verde (SpringGreen) de la clase "pruebas".
+  -->
+  <div id="carlos" class="prueba">CARLOS PRUEBA</div>
+</body>
+</html>

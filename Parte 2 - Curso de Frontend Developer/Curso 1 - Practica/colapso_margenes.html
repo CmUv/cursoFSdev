@@ -4,20 +4,24 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Colapso de margenes</title>
+    <title>Colapso de márgenes</title>
     <style>
+      /* Contenedor con Flexbox en dirección de columna */
       .container {
-        display: flex;
-        flex-direction: column;
+        display: flex;               /* Usa flexbox */
+        flex-direction: column;      /* Apila los elementos en una columna */
       }
+
+      /* Estilos generales para los elementos <div> */
       div {
-        margin: 20px;
+        margin: 20px;                /* Márgenes de 20px en todos los lados */
       }
     </style>
   </head>
   <body>
     <section class="container">
-      <div>Colapso de margenes</div>
+      <!-- Dos elementos <div> con márgenes, demostrando el colapso de márgenes -->
+      <div>Colapso de márgenes</div>
       <div>Ejemplo</div>
     </section>
   </body>

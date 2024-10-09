@@ -1,121 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
-  <title>Document</title>
+  <meta charset="UTF-8"> <!-- Define la codificación de caracteres como UTF-8 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Asegura compatibilidad con Internet Explorer -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura el ancho y la escala para dispositivos móviles -->
+  
+  <!-- Preconexión para fuentes de Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Conexión previa a la fuente -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Conexión previa con CORS -->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet"> <!-- Importa la fuente Quicksand -->
+
+  <title>Email enviado</title> <!-- Título de la página -->
+
   <style>
+    /* Variables de color definidas en :root para facilitar su uso */
     :root {
-      --white: #FFFFFF;
-      --black: #000000;
-      --very-light-pink: #C7C7C7;
-      --text-input-field: #F7F7F7;
-      --hospital-green: #ACD9B2;
-      --sm: 14px;
-      --md: 16px;
-      --lg: 18px;
+      --white: #FFFFFF;                 /* Color blanco */
+      --black: #000000;                 /* Color negro */
+      --very-light-pink: #C7C7C7;       /* Rosa muy claro */
+      --text-input-field: #F7F7F7;      /* Color de fondo del campo de texto */
+      --hospital-green: #ACD9B2;        /* Verde hospital */
+      --sm: 14px;                       /* Tamaño de fuente pequeño */
+      --md: 16px;                       /* Tamaño de fuente mediano */
+      --lg: 18px;                       /* Tamaño de fuente grande */
     }
+
+    /* Estilo general del cuerpo */
     body {
-      margin: 0;
-      font-family: 'Quicksand', sans-serif;
+      margin: 0;                        /* Elimina el margen por defecto */
+      font-family: 'Quicksand', sans-serif; /* Aplica la fuente Quicksand */
     }
+
+    /* Estilo para el contenedor principal del login */
     .login {
-      width: 100%;
-      height: 100vh;
-      display: grid;
-      place-items: center;
+      width: 100%;                      /* Ancho completo */
+      height: 100vh;                   /* Alto completo de la ventana */
+      display: grid;                   /* Usa grid para centrar */
+      place-items: center;             /* Centra el contenido vertical y horizontalmente */
     }
+
+    /* Estilo para el contenedor del formulario */
     .form-container {
-      display: grid;
-      grid-template-rows: auto 1fr auto;
-      width: 300px;
-      justify-items: center;
+      display: grid;                   /* Usa grid para organizar el contenido */
+      grid-template-rows: auto 1fr auto; /* Filas automáticas y flexible */
+      width: 300px;                   /* Ancho del contenedor del formulario */
+      justify-items: center;           /* Centrar elementos horizontalmente */
     }
+
+    /* Estilo para el logo, inicialmente oculto */
     .logo {
-      width: 150px;
-      margin-bottom: 48px;
-      justify-self: center;
-      display: none;
+      width: 150px;                   /* Ancho del logo */
+      margin-bottom: 48px;            /* Espaciado inferior */
+      justify-self: center;            /* Centrar horizontalmente */
+      display: none;                   /* Ocultar logo por defecto */
     }
+
+    /* Estilo para el título del formulario */
     .title {
-      font-size: var(--lg);
-      margin-bottom: 12px;
-      text-align: center;
+      font-size: var(--lg);            /* Tamaño de fuente grande */
+      margin-bottom: 12px;             /* Espaciado inferior */
+      text-align: center;               /* Centrar texto */
     }
+
+    /* Estilo para el subtítulo */
     .subtitle {
-      color: var(--very-light-pink);
-      font-size: var(--md);
-      font-weight: 300;
-      margin-top: 0;
-      margin-bottom: 32px;
-      text-align: center;
+      color: var(--very-light-pink);   /* Color rosa muy claro */
+      font-size: var(--md);             /* Tamaño de fuente mediano */
+      font-weight: 300;                 /* Peso de la fuente normal */
+      margin-top: 0;                    /* Sin margen superior */
+      margin-bottom: 32px;              /* Espaciado inferior */
+      text-align: center;               /* Centrar texto */
     }
+
+    /* Estilo para la imagen del email */
     .email-image {
-      width: 132px;
-      height: 132px;
-      border-radius: 50%;
-      background-color: var(--text-input-field);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 24px;
+      width: 132px;                     /* Ancho de la imagen */
+      height: 132px;                    /* Alto de la imagen */
+      border-radius: 50%;               /* Bordes redondeados para hacerla circular */
+      background-color: var(--text-input-field); /* Color de fondo para la imagen */
+      display: flex;                    /* Usar flexbox para centrar el contenido */
+      justify-content: center;          /* Centrar contenido horizontalmente */
+      align-items: center;              /* Centrar contenido verticalmente */
+      margin-bottom: 24px;              /* Espaciado inferior */
     }
+
+    /* Estilo para la imagen dentro de la sección de email */
     .email-image img {
-      width: 80px;
+      width: 80px;                      /* Ancho de la imagen del email */
     }
+
+    /* Estilo para la sección de reenvío de correo */
     .resend {
-      font-size: var(--sm);
+      font-size: var(--sm);             /* Tamaño de fuente pequeño */
     }
+
+    /* Estilo para el texto de reenvío */
     .resend span {
-      color: var(--very-light-pink);
+      color: var(--very-light-pink);    /* Color rosa muy claro */
     }
+
+    /* Estilo para el enlace de reenvío */
     .resend a {
-      color: var(--hospital-green);
-      text-decoration: none;
+      color: var(--hospital-green);      /* Color verde hospital */
+      text-decoration: none;             /* Sin subrayado */
     }
+
+    /* Estilo para el botón primario */
     .primary-button {
-      background-color: var(--hospital-green);
-      border-radius: 8px;
-      border: none;
-      color: var(--white);
-      width: 100%;
-      cursor: pointer;
-      font-size: var(--md);
-      font-weight: bold;
-      height: 50px;
+      background-color: var(--hospital-green); /* Color de fondo del botón */
+      border-radius: 8px;                /* Bordes redondeados */
+      border: none;                      /* Sin borde */
+      color: var(--white);               /* Color de texto blanco */
+      width: 100%;                       /* Ancho completo */
+      cursor: pointer;                   /* Cambiar cursor al pasar el mouse */
+      font-size: var(--md);              /* Tamaño de fuente mediano */
+      font-weight: bold;                 /* Negrita */
+      height: 50px;                      /* Altura del botón */
     }
+
+    /* Margen para el botón de login */
     .login-button {
-      margin-top: 14px;
-      margin-bottom: 30px;
+      margin-top: 14px;                 /* Espaciado superior */
+      margin-bottom: 30px;              /* Espaciado inferior */
     }
+
+    /* Media query para pantallas pequeñas */
     @media (max-width: 640px) {
       .logo {
-        display: block;
+        display: block;                 /* Mostrar el logo en pantallas pequeñas */
       }
     }
   </style>
 </head>
 <body>
-  <div class="login">
-    <div class="form-container">
-      <img src="./logos/logo_yard_sale.svg" alt="logo" class="logo">
+  <div class="login"> <!-- Contenedor principal para el login -->
+    <div class="form-container"> <!-- Contenedor del formulario -->
+      <img src="./logos/logo_yard_sale.svg" alt="logo" class="logo"> <!-- Logo de la aplicación, inicialmente oculto -->
 
-      <h1 class="title">Email has been sent!</h1>
-      <p class="subtitle">Please check your inbox for instructions on how to reset the password</p>
+      <h1 class="title">¡Se ha enviado un email!</h1> <!-- Título del mensaje -->
+      <p class="subtitle">Por favor, revisa tu bandeja de entrada para obtener instrucciones sobre cómo restablecer la contraseña</p> <!-- Subtítulo -->
 
-      <div class="email-image">
-        <img src="./icons/email.svg" alt="email">
+      <div class="email-image"> <!-- Contenedor para la imagen del email -->
+        <img src="./icons/email.svg" alt="email"> <!-- Imagen que representa un correo electrónico -->
       </div>
 
-      <button class="primary-button login-button">Login</button>
+      <button class="primary-button login-button">Iniciar Sesión</button> <!-- Botón de inicio de sesión -->
 
-      <p class="resend">
-        <span>Didn't receive the email?</span>
-        <a href="/">Resend</a>
+      <p class="resend"> <!-- Sección para reenvío de correo -->
+        <span>¿No recibiste el email?</span> <!-- Texto de reenvío -->
+        <a href="/">Reenviar</a> <!-- Enlace para reenviar el correo -->
       </p>
     </div>
   </div>

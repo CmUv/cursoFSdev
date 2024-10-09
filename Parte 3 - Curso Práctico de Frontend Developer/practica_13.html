@@ -1,152 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
-  <title>Document</title>
+  <meta charset="UTF-8"> <!-- Define la codificación de caracteres como UTF-8 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Asegura compatibilidad con Internet Explorer -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura el ancho y la escala para dispositivos móviles -->
+  <title>Mi carrito</title> <!-- Título de la página -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Preconexión para la fuente de Google -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Preconexión para la fuente de Google con Cross-Origin -->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet"> <!-- Carga la fuente Quicksand -->
   <style>
+    /* Variables de color definidas en :root para facilitar su uso */
     :root {
-      --white: #FFFFFF;
-      --black: #000000;
-      --very-light-pink: #C7C7C7;
-      --text-input-field: #F7F7F7;
-      --hospital-green: #ACD9B2;
-      --sm: 14px;
-      --md: 16px;
-      --lg: 18px;
+      --white: #FFFFFF;                 /* Color blanco */
+      --black: #000000;                 /* Color negro */
+      --very-light-pink: #C7C7C7;       /* Rosa muy claro */
+      --text-input-field: #F7F7F7;      /* Color de fondo del campo de texto */
+      --hospital-green: #ACD9B2;        /* Verde hospital */
+      --sm: 14px;                       /* Tamaño de fuente pequeño */
+      --md: 16px;                       /* Tamaño de fuente mediano */
+      --lg: 18px;                       /* Tamaño de fuente grande */
     }
+
+    /* Estilo general del cuerpo */
     body {
-      margin: 0;
-      font-family: 'Quicksand', sans-serif;
+      margin: 0;                        /* Elimina el margen por defecto */
+      font-family: 'Quicksand', sans-serif; /* Aplica la fuente Quicksand */
     }
+
+    /* Estilo del contenedor de detalles del carrito */
     .product-detail {
-      width: 360px;
-      padding: 24px;
-      box-sizing: border-box;
-      position: absolute;
-      right: 0;
+      width: 360px;                     /* Ancho del contenedor */
+      padding: 24px;                   /* Espaciado interno */
+      box-sizing: border-box;          /* Incluye el padding en el ancho total */
+      position: absolute;               /* Posicionamiento absoluto para colocarlo a la derecha */
+      right: 0;                         /* Alinear a la derecha */
     }
+
+    /* Contenedor del título */
     .title-container {
-      display: flex;
+      display: flex;                   /* Usa flexbox para alinear elementos */
     }
+
+    /* Estilo para la flecha del título */
     .title-container img {
-      transform: rotate(180deg);
-      margin-right: 14px;
+      transform: rotate(180deg);      /* Rota la imagen 180 grados */
+      margin-right: 14px;             /* Espaciado a la derecha */
     }
+
+    /* Estilo para el título */
     .title {
-      font-size: var(--lg);
-      font-weight: bold;
+      font-size: var(--lg);           /* Tamaño de fuente grande */
+      font-weight: bold;               /* Texto en negrita */
     }
+
+    /* Estilo de cada pedido en el carrito */
     .order {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 16px;
-      align-items: center;
-      background-color: var(--text-input-field);
-      margin-bottom: 24px;
-      border-radius: 8px;
-      padding: 0 24px;
+      display: grid;                   /* Usa grid para organizar el contenido */
+      grid-template-columns: auto 1fr; /* Dos columnas: una para la fecha y otra para el precio */
+      gap: 16px;                       /* Espaciado entre columnas */
+      align-items: center;             /* Centra verticalmente */
+      background-color: var(--text-input-field); /* Color de fondo */
+      margin-bottom: 24px;             /* Margen inferior */
+      border-radius: 8px;              /* Bordes redondeados */
+      padding: 0 24px;                 /* Padding horizontal */
     }
+
+    /* Estilo para la información de cada pedido */
     .order p:nth-child(1) {
-      display: flex;
-      flex-direction: column;
+      display: flex;                   /* Usar flex para alinear elementos */
+      flex-direction: column;         /* Organiza en columna */
     }
+    
+    /* Estilo para la fecha del pedido */
     .order p span:nth-child(1) {
-      font-size: var(--md);
-      font-weight: bold;
+      font-size: var(--md);           /* Tamaño de fuente mediano */
+      font-weight: bold;              /* Texto en negrita */
     }
+
+    /* Estilo para el precio del pedido */
     .order p:nth-child(2) {
-      text-align: end;
-      font-weight: bold;
+      text-align: end;                /* Alinear el precio a la derecha */
+      font-weight: bold;              /* Texto en negrita */
     }
+
+    /* Estilo del carrito de compras */
     .shopping-cart {
-      display: grid;
-      grid-template-columns: auto 1fr auto auto;
-      gap: 16px;
-      margin-bottom: 24px;
-      align-items: center;
+      display: grid;                  /* Usa grid para organizar el contenido */
+      grid-template-columns: auto 1fr auto auto; /* Cuatro columnas para imagen, nombre, precio y un icono */
+      gap: 16px;                      /* Espaciado entre columnas */
+      margin-bottom: 24px;           /* Margen inferior */
+      align-items: center;            /* Centra verticalmente */
     }
+
+    /* Estilo para la figura del producto */
     .shopping-cart figure {
-      margin: 0;
+      margin: 0;                     /* Elimina margen */
     }
+
+    /* Estilo para la imagen del producto */
     .shopping-cart figure img {
-      width: 70px;
-      height: 70px;
-      border-radius: 20px;
-      object-fit: cover;
+      width: 70px;                   /* Ancho de la imagen */
+      height: 70px;                  /* Alto de la imagen */
+      border-radius: 20px;           /* Bordes redondeados */
+      object-fit: cover;             /* Ajusta la imagen sin distorsionar */
     }
+
+    /* Estilo para el nombre del producto */
     .shopping-cart p:nth-child(2) {
-      color: var(--very-light-pink);
+      color: var(--very-light-pink);  /* Color del texto */
     }
+
+    /* Estilo para el precio del producto */
     .shopping-cart p:nth-child(3) {
-      font-size: var(--md);
-      font-weight: bold;
+      font-size: var(--md);           /* Tamaño de fuente mediano */
+      font-weight: bold;              /* Texto en negrita */
     }
+
+    /* Estilo para el botón principal */
     .primary-button {
-      background-color: var(--hospital-green);
-      border-radius: 8px;
-      border: none;
-      color: var(--white);
-      width: 100%;
-      cursor: pointer;
-      font-size: var(--md);
-      font-weight: bold;
-      height: 50px;
+      background-color: var(--hospital-green); /* Color de fondo */
+      border-radius: 8px;                 /* Bordes redondeados */
+      border: none;                       /* Sin borde */
+      color: var(--white);                /* Color del texto */
+      width: 100%;                        /* Ancho completo */
+      cursor: pointer;                    /* Cambia el cursor al pasar sobre el botón */
+      font-size: var(--md);               /* Tamaño de fuente mediano */
+      font-weight: bold;                  /* Texto en negrita */
+      height: 50px;                       /* Altura del botón */
     }
+
+    /* Estilos para pantallas más pequeñas */
     @media (max-width: 640px) {
       .product-detail {
-        width: 100%;
+        width: 100%;                     /* Ancho completo en pantallas pequeñas */
       }
     }
   </style>
 </head>
 <body>
-  <aside class="product-detail">
-    <div class="title-container">
-      <img src="./icons/flechita.svg" alt="arrow">
-      <p class="title">My order</p>
+  <aside class="product-detail"> <!-- Contenedor de detalles del carrito -->
+    <div class="title-container"> <!-- Contenedor del título -->
+      <img src="./icons/flechita.svg" alt="arrow"> <!-- Imagen de la flecha -->
+      <p class="title">Mi orden</p> <!-- Título -->
     </div>
 
-    <div class="my-order-content">
-      <div class="shopping-cart">
+    <div class="my-order-content"> <!-- Contenido de la orden -->
+      <div class="shopping-cart"> <!-- Primer artículo del carrito -->
         <figure>
-          <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="bike">
+          <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Bicicleta"> <!-- Imagen del producto -->
         </figure>
-        <p>Bike</p>
-        <p>$30,00</p>
-        <img src="./icons/icon_close.png" alt="close">
+        <p>Bicicleta</p> <!-- Nombre del producto -->
+        <p>$30,00</p> <!-- Precio del producto -->
+        <img src="./icons/icon_close.png" alt="close"> <!-- Icono de cerrar -->
       </div>
 
-      <div class="shopping-cart">
+      <div class="shopping-cart"> <!-- Segundo artículo del carrito -->
         <figure>
-          <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="bike">
+          <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Bicicleta"> <!-- Imagen del producto -->
         </figure>
-        <p>Bike</p>
-        <p>$30,00</p>
-        <img src="./icons/icon_close.png" alt="close">
+        <p>Bicicleta</p> <!-- Nombre del producto -->
+        <p>$30,00</p> <!-- Precio del producto -->
+        <img src="./icons/icon_close.png" alt="close"> <!-- Icono de cerrar -->
       </div>
 
-      <div class="shopping-cart">
+      <div class="shopping-cart"> <!-- Tercer artículo del carrito -->
         <figure>
-          <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="bike">
+          <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Bicicleta"> <!-- Imagen del producto -->
         </figure>
-        <p>Bike</p>
-        <p>$30,00</p>
-        <img src="./icons/icon_close.png" alt="close">
+        <p>Bicicleta</p> <!-- Nombre del producto -->
+        <p>$30,00</p> <!-- Precio del producto -->
+        <img src="./icons/icon_close.png" alt="close"> <!-- Icono de cerrar -->
       </div>
 
-      <div class="order">
+      <div class="order"> <!-- Resumen del pedido -->
         <p>
-          <span>Total</span>
+          <span>Total</span> <!-- Texto "Total" -->
         </p>
-        <p>$560.00</p>
+        <p>$560.00</p> <!-- Total del pedido -->
       </div>
 
-      <button class="primary-button">
+      <button class="primary-button"> <!-- Botón para realizar el checkout -->
         Checkout
       </button>
     </div>

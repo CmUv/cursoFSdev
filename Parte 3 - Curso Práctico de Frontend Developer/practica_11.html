@@ -1,135 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <meta charset="UTF-8"> <!-- Define la codificación de caracteres como UTF-8 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Asegura compatibilidad con Internet Explorer -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura el ancho y la escala para dispositivos móviles -->
+  <title>Barra superior</title> <!-- Título de la página -->
   <style>
+    /* Variables de color definidas en :root para facilitar su uso */
     :root {
-      --white: #FFFFFF;
-      --black: #000000;
-      --very-light-pink: #C7C7C7;
-      --text-input-field: #F7F7F7;
-      --hospital-green: #ACD9B2;
-      --sm: 14px;
-      --md: 16px;
-      --lg: 18px;
+      --white: #FFFFFF;                 /* Color blanco */
+      --black: #000000;                 /* Color negro */
+      --very-light-pink: #C7C7C7;       /* Rosa muy claro */
+      --text-input-field: #F7F7F7;      /* Color de fondo del campo de texto */
+      --hospital-green: #ACD9B2;        /* Verde hospital */
+      --sm: 14px;                       /* Tamaño de fuente pequeño */
+      --md: 16px;                       /* Tamaño de fuente mediano */
+      --lg: 18px;                       /* Tamaño de fuente grande */
     }
+
+    /* Estilo general del cuerpo */
     body {
-      margin: 0;
-      font-family: 'Quicksand', sans-serif;
+      margin: 0;                        /* Elimina el margen por defecto */
+      font-family: 'Quicksand', sans-serif; /* Aplica la fuente Quicksand */
     }
+
+    /* Estilo para la barra de navegación */
     nav {
-      display: flex;
-      justify-content: space-between;
-      padding: 0 24px;
-      border-bottom: 1px solid var(--very-light-pink);
+      display: flex;                    /* Usa flexbox para organizar los elementos de la barra */
+      justify-content: space-between;   /* Espacio entre los elementos de la barra */
+      padding: 0 24px;                  /* Espaciado interno horizontal */
+      border-bottom: 1px solid var(--very-light-pink); /* Línea inferior */
     }
+
+    /* Estilo para el icono del menú */
     .menu {
-      display: none;
+      display: none;                    /* Oculta el menú por defecto */
     }
+
+    /* Estilo para el logo */
     .logo {
-      width: 100px;
+      width: 100px;                    /* Ancho fijo para el logo */
     }
+
+    /* Estilo para las listas en la barra de navegación */
     .navbar-left ul,
     .navbar-right ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      align-items: center;
-      height: 60px;
+      list-style: none;                 /* Elimina los puntos de la lista */
+      padding: 0;                       /* Elimina el padding por defecto */
+      margin: 0;                        /* Elimina el margen por defecto */
+      display: flex;                    /* Usa flexbox para organizar los elementos */
+      align-items: center;              /* Centra verticalmente los elementos */
+      height: 60px;                     /* Altura de la barra de navegación */
     }
+
+    /* Estilo para la sección izquierda de la barra de navegación */
     .navbar-left {
-      display: flex;
+      display: flex;                    /* Muestra la barra de navegación izquierda como flex */
     }
+
+    /* Espaciado a la izquierda de la barra de navegación */
     .navbar-left ul {
-      margin-left: 12px;
+      margin-left: 12px;               /* Espaciado a la izquierda */
     }
+
+    /* Estilo para los enlaces de la barra de navegación */
     .navbar-left ul li a,
     .navbar-right ul li a {
-      text-decoration: none;
-      color: var(--very-light-pink);
-      border: 1px solid var(--white);
-      padding: 8px;
-      border-radius: 8px;
+      text-decoration: none;            /* Elimina el subrayado de los enlaces */
+      color: var(--very-light-pink);    /* Color de los enlaces */
+      border: 1px solid var(--white);   /* Borde blanco alrededor de los enlaces */
+      padding: 8px;                    /* Espaciado interno */
+      border-radius: 8px;               /* Bordes redondeados */
     }
+
+    /* Efecto al pasar el mouse sobre los enlaces */
     .navbar-left ul li a:hover,
     .navbar-right ul li a:hover {
-      border: 1px solid var(--hospital-green);
-      color: var(--hospital-green);
+      border: 1px solid var(--hospital-green); /* Cambia el color del borde */
+      color: var(--hospital-green);             /* Cambia el color del texto */
     }
+
+    /* Estilo para el email en la barra de navegación */
     .navbar-email {
-      color: var(--very-light-pink);
-      font-size: var(--sm);
-      margin-right: 12px;
+      color: var(--very-light-pink); /* Color del email */
+      font-size: var(--sm);           /* Tamaño de fuente pequeño */
+      margin-right: 12px;             /* Espaciado a la derecha */
     }
+
+    /* Estilo para el carrito de compras */
     .navbar-shopping-cart {
-      position: relative;
+      position: relative;             /* Posicionamiento relativo para el contador */
     }
+
+    /* Estilo para el contador en el carrito de compras */
     .navbar-shopping-cart div {
-      width: 16px;
-      height: 16px;
-      background-color: var(--hospital-green);
-      border-radius: 50%;
-      font-size: var(--sm);
-      font-weight: bold;
-      position: absolute;
-      top: -6px;
-      right: -3px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      width: 16px;                   /* Ancho del contador */
+      height: 16px;                  /* Alto del contador */
+      background-color: var(--hospital-green); /* Color de fondo */
+      border-radius: 50%;            /* Bordes completamente redondeados */
+      font-size: var(--sm);          /* Tamaño de fuente pequeño */
+      font-weight: bold;             /* Negrita */
+      position: absolute;            /* Posicionamiento absoluto para colocar el contador */
+      top: -6px;                     /* Ajuste vertical */
+      right: -3px;                   /* Ajuste horizontal */
+      display: flex;                 /* Usa flexbox para centrar el contenido */
+      justify-content: center;       /* Centra horizontalmente */
+      align-items: center;           /* Centra verticalmente */
     }
+
+    /* Estilos para pantallas más pequeñas */
     @media (max-width: 640px) {
       .menu {
-        display: block;
+        display: block;               /* Muestra el menú en pantallas pequeñas */
       }
       .navbar-left ul {
-        display: none;
+        display: none;                /* Oculta los elementos de la barra de navegación izquierda en pantallas pequeñas */
       }
       .navbar-email {
-        display: none;
+        display: none;                /* Oculta el email en pantallas pequeñas */
       }
     }
   </style>
 </head>
 <body>
   <nav>
-    <img src="./icons/icon_menu.svg" alt="menu" class="menu">
+    <img src="./icons/icon_menu.svg" alt="menu" class="menu"> <!-- Icono del menú -->
 
     <div class="navbar-left">
-      <img src="./logos/logo_yard_sale.svg" alt="logo" class="logo">
+      <img src="./logos/logo_yard_sale.svg" alt="logo" class="logo"> <!-- Logo de la tienda -->
 
       <ul>
         <li>
-          <a href="/">All</a>
+          <a href="/">Todos</a> <!-- Enlace a todos los productos -->
         </li>
         <li>
-          <a href="/">Clothes</a>
+          <a href="/">Ropa</a> <!-- Enlace a la sección de ropa -->
         </li>
         <li>
-          <a href="/">Electronics</a>
+          <a href="/">Electrónicos</a> <!-- Enlace a la sección de electrónicos -->
         </li>
         <li>
-          <a href="/">Furnitures</a>
+          <a href="/">Muebles</a> <!-- Enlace a la sección de muebles -->
         </li>
         <li>
-          <a href="/">Toys</a>
+          <a href="/">Juguetes</a> <!-- Enlace a la sección de juguetes -->
         </li>
         <li>
-          <a href="/">Others</a>
+          <a href="/">Otros</a> <!-- Enlace a otras secciones -->
         </li>
+        
       </ul>
     </div>
 
-    <div class="navbar-right">
+    <div class="navbar-right"> <!-- Sección derecha de la barra de navegación -->
       <ul>
-        <li class="navbar-email">platzi@example.com</li>
+        <li class="navbar-email">carlos@ejemplo.com.pa</li> <!-- Email del usuario -->
         <li class="navbar-shopping-cart">
-          <img src="./icons/icon_shopping_cart.svg" alt="shopping cart">
-          <div>2</div>
+          <img src="./icons/icon_shopping_cart.svg" alt="shopping cart"> <!-- Icono del carrito de compras -->
+          <div>2</div> <!-- Contador de artículos en el carrito -->
         </li>
       </ul>
     </div>

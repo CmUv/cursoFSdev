@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"> <!-- Define la codificación de caracteres como UTF-8 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Asegura compatibilidad con Internet Explorer -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura el ancho y la escala para dispositivos móviles -->
+  
+  <!-- Preconexión para fuentes de Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Conexión previa a la fuente -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Conexión previa con CORS -->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet"> <!-- Importa la fuente Quicksand -->
+
+  <title>Login</title> <!-- Título de la página -->
+
+  <style>
+    /* Variables de color definidas en :root para facilitar su uso */
+    :root {
+      --white: #FFFFFF;                 /* Blanco */
+      --black: #000000;                 /* Negro */
+      --very-light-pink: #C7C7C7;       /* Rosa muy claro */
+      --text-input-field: #F7F7F7;      /* Color de fondo del campo de texto */
+      --hospital-green: #ACD9B2;        /* Verde hospital */
+      --sm: 14px;                       /* Tamaño de fuente pequeño */
+      --md: 16px;                       /* Tamaño de fuente mediano */
+      --lg: 18px;                       /* Tamaño de fuente grande */
+    }
+
+    /* Estilo general del cuerpo */
+    body {
+      margin: 0;                       /* Elimina el margen por defecto */
+      font-family: 'Quicksand', sans-serif; /* Aplica la fuente Quicksand */
+    }
+
+    /* Estilo para el contenedor principal del login */
+    .login {
+      width: 100%;                     /* Ancho completo */
+      height: 100vh;                  /* Alto completo de la ventana */
+      display: grid;                  /* Usa grid para centrar */
+      place-items: center;            /* Centra el contenido vertical y horizontalmente */
+    }
+
+    /* Estilo para el contenedor del formulario */
+    .form-container {
+      display: grid;                  /* Usa grid para organizar el contenido */
+      grid-template-rows: auto 1fr auto; /* Filas automáticas y flexible */
+      width: 300px;                  /* Ancho del contenedor del formulario */
+    }
+
+    /* Estilo para el logo, inicialmente oculto */
+    .logo {
+      width: 150px;                  /* Ancho del logo */
+      margin-bottom: 48px;           /* Espaciado inferior */
+      justify-self: center;           /* Centrar horizontalmente */
+      display: none;                  /* Ocultar logo por defecto */
+    }
+
+    /* Estilo para el título del formulario */
+    .title {
+      font-size: var(--lg);           /* Tamaño de fuente grande */
+      margin-bottom: 12px;            /* Espaciado inferior */
+      text-align: center;              /* Centrar texto */
+    }
+
+    /* Estilo para el subtítulo */
+    .subtitle {
+      color: var(--very-light-pink);  /* Color rosa muy claro */
+      font-size: var(--md);            /* Tamaño de fuente mediano */
+      font-weight: 300;                /* Peso de la fuente normal */
+      margin-top: 0;                   /* Sin margen superior */
+      margin-bottom: 32px;             /* Espaciado inferior */
+      text-align: center;              /* Centrar texto */
+    }
+
+    /* Estilo para el formulario */
+    .form {
+      display: flex;                   /* Usar flexbox para organizar los campos */
+      flex-direction: column;          /* Organizar en columna */
+    }
+
+    /* Estilo para las etiquetas de los campos */
+    .label {
+      font-size: var(--sm);            /* Tamaño de fuente pequeño */
+      font-weight: bold;               /* Negrita */
+      margin-bottom: 4px;              /* Espaciado inferior */
+    }
+
+    /* Estilo para los campos de entrada */
+    .input {
+      background-color: var(--text-input-field); /* Color de fondo del campo */
+      border: none;                    /* Sin borde */
+      border-radius: 8px;             /* Bordes redondeados */
+      height: 30px;                   /* Altura del campo */
+      font-size: var(--md);            /* Tamaño de fuente mediano */
+      padding: 6px;                   /* Espaciado interno */
+      margin-bottom: 12px;            /* Espaciado inferior */
+    }
+
+    /* Estilo para el botón de confirmación */
+    .primary-button {
+      background-color: var(--hospital-green); /* Color de fondo del botón */
+      border-radius: 8px;               /* Bordes redondeados */
+      border: none;                     /* Sin borde */
+      color: var(--white);              /* Color de texto blanco */
+      width: 100%;                      /* Ancho completo */
+      cursor: pointer;                  /* Cambiar cursor al pasar el mouse */
+      font-size: var(--md);             /* Tamaño de fuente mediano */
+      font-weight: bold;                /* Negrita */
+      height: 50px;                     /* Altura del botón */
+    }
+
+    /* Margen para el botón de login */
+    .login-button {
+      margin-top: 14px;                /* Espaciado superior */
+      margin-bottom: 30px;             /* Espaciado inferior */
+    }
+
+    /* Media query para pantallas pequeñas */
+    @media (max-width: 640px) {
+      .logo {
+        display: block;                /* Mostrar el logo en pantallas pequeñas */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="login">
+    <div class="form-container">
+      <!-- Logo de la aplicación, inicialmente oculto -->
+      <img src="./logos/logo_yard_sale.svg" alt="logo" class="logo">
+
+      <h1 class="title">Crea una nueva contraseña</h1> <!-- Título del formulario -->
+      <p class="subtitle">Ingresa una nueva contraseña para tu cuenta</p> <!-- Subtítulo -->
+
+      <form action="/" class="form"> <!-- Formulario para ingresar contraseña -->
+        <label for="password" class="label">Contraseña</label> <!-- Etiqueta para el campo de contraseña -->
+        <input type="password" id="password" placeholder="*********" class="input input-password"> <!-- Campo de entrada para contraseña -->
+
+        <label for="new-password" class="label">Nueva contraseña</label> <!-- Etiqueta para el campo de nueva contraseña -->
+        <input type="password" id="new-password" placeholder="*********" class="input input-password"> <!-- Campo de entrada para nueva contraseña -->
+
+        <input type="submit" value="Confirmar" class="primary-button login-button"> <!-- Botón de confirmación -->
+      </form>
+    </div>
+  </div>
+</body>
+</html>

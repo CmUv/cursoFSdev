@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="descripcion" content="Tarjeta de contacto">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carlos Ureña</title>
+
+    <!-- Preconexión para fuentes de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Variables de color */
+        :root {
+            --background-color: #000000; /* Color de fondo suave */
+            --container-bg: #ffffff;     /* Fondo blanco para el contenedor */
+            --primary-color: #4B0082;    /* Color elegante (índigo) */
+            --text-color: #333333;        /* Color de texto oscuro */
+            --button-bg: #7835d6;         /* Color de fondo para botones */
+            --hover-color: #ccc;          /* Color al pasar el mouse sobre botones */
+        }
+
+        /* Estilo general para resetear márgenes y padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /* Para incluir padding y border en el ancho y alto total */
+        }
+
+        /* Fuente general de la página */
+        html {
+            font-family: 'Roboto', sans-serif;
+            font-size: 62.5%; /* Base para el tamaño de fuente */
+        }
+
+        /* Estilo del cuerpo */
+        body {
+            /* background-color: var(--background-color); /* Color de fondo */
+            background-image: url("https://images.pexels.com/photos/574073/pexels-photo-574073.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        /* Contenedor principal con flexbox para centrar el contenido */
+        .container {
+            width: 90vw;            /* Ancho del contenedor */
+            max-width: 600px;      /* Máximo ancho para pantallas grandes */
+            height: 450px;         /* Alto del contenedor */
+            background-color: var(--container-bg); /* Fondo blanco */
+            border-radius: 20px;   /* Bordes redondeados */
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+            display: flex;         /* Usar flexbox para centrar */
+            flex-direction: column; /* Organizar los elementos en columna */
+            align-items: center;   /* Centrar elementos horizontalmente */
+            justify-content: center; /* Centrar elementos verticalmente */
+            position: relative;
+            margin: 50px auto;     /* Márgenes automáticos para centrar */
+        }
+
+        /* Estilo para la cabecera de la tarjeta */
+        .header {
+            width: 100%;           /* Ancho completo */
+            height: 180px;         /* Altura de la cabecera */
+            overflow: hidden;      /* Ocultar desbordamiento */
+            border-radius: 20px 20px 0 0; /* Bordes redondeados arriba */
+            position: relative;    /* Posición relativa para manejar elementos hijos */
+        }
+
+        /* Imagen de la cabecera */
+        .header img {
+            width: 100%;           /* Ancho completo */
+            position: absolute;    /* Posición absoluta para cubrir el área */
+            top: 0;                /* Posicionar en la parte superior */
+            left: 0;               /* Alinear a la izquierda */
+            height: auto;          /* Ajustar altura automáticamente */
+        }
+
+        /* Sección de información */
+        .information {
+            width: 100%;           /* Ancho completo */
+            position: relative;    /* Posición relativa para elementos dentro */
+            display: flex;         /* Usar flexbox para organizar */
+            flex-direction: column; /* Organizar en columna */
+            align-items: center;   /* Centrar elementos */
+        }
+
+        /* Logo de la tarjeta */
+        .logo {
+            width: 120px;          /* Ancho del logo */
+            height: 120px;         /* Alto del logo */
+            border-radius: 50%;    /* Bordes completamente redondeados */
+            border: 5px solid var(--container-bg); /* Borde blanco */
+            background: var(--button-bg); /* Fondo para el logo */
+            position: absolute;     /* Posicionamiento absoluto */
+            top: -60px;             /* Mover hacia arriba */
+        }
+
+        /* Imagen del logo */
+        .information .logo img {
+            width: 100%;           /* Ancho completo del logo */
+            border-radius: 50%;    /* Bordes redondeados */
+        }
+
+        /* Estilos para el nombre y edad */
+        .info h1 {
+            font-size: 3rem;       /* Tamaño de fuente grande para el nombre */
+            font-weight: 700;      /* Negrita */
+            margin-top: 70px;      /* Espaciado en la parte superior */
+            color: var(--primary-color); /* Color del texto principal */
+            text-align: center;     /* Centrar texto */
+        }
+
+        .info h3 {
+            font-size: 2rem;       /* Tamaño de fuente mediano para la edad */
+            font-weight: 400;      /* Normal */
+            margin-top: 10px;      /* Espaciado en la parte superior */
+            color: #707070;        /* Color gris para el texto secundario */
+            text-align: center;     /* Centrar texto */
+        }
+
+        /* Estilo para redes sociales */
+        .social-networks {
+            width: 100%;           /* Ancho completo */
+            margin-top: 20px;      /* Espaciado superior */
+            display: flex;         /* Usar flexbox para organizar */
+            justify-content: center; /* Centrar horizontalmente */
+        }
+
+        /* Estilo para botones de redes sociales */
+        .button {
+            width: 50px;           /* Ancho del botón */
+            height: 50px;          /* Alto del botón */
+            margin: 0 10px;        /* Espaciado horizontal */
+            border-radius: 10px;   /* Bordes redondeados */
+            background-color: var(--button-bg); /* Color de fondo */
+            display: flex;         /* Usar flexbox para centrar contenido */
+            justify-content: center; /* Centrar contenido horizontalmente */
+            align-items: center;   /* Centrar contenido verticalmente */
+            transition: background-color 0.3s; /* Transición suave para el color */
+        }
+
+        /* Cambiar color de fondo al pasar el mouse sobre los botones */
+        .button:hover {
+            background-color: var(--hover-color); /* Color de fondo al hacer hover */
+        }
+
+        /* Iconos de redes sociales */
+        .social-networks img {
+            width: 70%;           /* Ancho relativo para iconos */
+            height: auto;         /* Ajustar altura automáticamente */
+        }
+
+        /* Medias queries para adaptabilidad */
+        @media screen and (max-width: 760px) {
+            .target {
+                width: 90%;          /* Ancho más flexible en pantallas pequeñas */
+                height: auto;        /* Altura automática */
+            }
+            .header {
+                height: 100px;       /* Reducir altura de la cabecera */
+            }
+            .information .logo {
+                width: 80px;         /* Reducir tamaño del logo */
+                height: 80px;
+                top: -40px;          /* Ajustar posición del logo */
+            }
+            .info h1 {
+                font-size: 2rem;     /* Tamaño más pequeño en pantallas pequeñas */
+                margin-top: 30px;    /* Ajustar margen */
+            }
+            .info h3 {
+                font-size: 1.5rem;    /* Tamaño más pequeño para el subtítulo */
+            }
+        }
+
+        @media screen and (max-width: 380px) {
+            body {
+                background: none;    /* Sin fondo en pantallas muy pequeñas */
+            }
+            .container {
+                background-color: #C7C7C7; /* Color de fondo gris */
+            }
+            .target {
+                width: 100%;         /* Ancho completo en pantallas muy pequeñas */
+                height: auto;        /* Altura automática */
+            }
+            .header {
+                height: 80px;        /* Reducir altura de la cabecera */
+            }
+            .information .logo {
+                top: -20px;          /* Ajustar posición del logo */
+            }
+            .info h1 {
+                font-size: 1.5rem;   /* Tamaño más pequeño para el título */
+                margin-top: 15px;    /* Ajustar margen */
+            }
+            .info h3 {
+                font-size: 1rem;     /* Tamaño más pequeño para el subtítulo */
+            }
+            .social-networks {
+                margin-top: 10px;    /* Ajustar margen superior */
+                flex-direction: column; /* Cambiar dirección a columna */
+            }
+            .button {
+                width: 40px;         /* Reducir tamaño de botones */
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="target">
+            <section class="header">
+                <!-- Imagen de cabecera -->
+                <!-- <img src="https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="portada"> -->
+                <img src="./img/banner.png" alt="portada">
+
+            </section>
+            <section class="information">
+                <div class="logo">
+                    <!-- Logo de la tarjeta -->
+                    <img src="./img/profile.jpg" alt="Logo CR">
+                </div>
+                <div class="info">
+                    <h1>Carlos Ureña</h1> <!-- Nombre -->
+                    <h3>Desarrollador | 24 años</h3> <!-- Edad y país -->
+                </div>
+                <div class="social-networks">
+                    <!-- Enlaces a redes sociales -->
+                    <a href="https://www.facebook.com/car10srodela/">
+                        <div class="button facebook">
+                            <img src="./img/facebook.svg" alt="Facebook">
+                        </div>
+                    </a>
+                    <a href="https://twitter.com/Car10sRodela">
+                        <div class="button twitter">
+                            <img src="./img/twitter.svg" alt="Twitter">
+                        </div>
+                    </a>
+                    <a href="https://www.instagram.com/car10srodela/">
+                        <div class="button instagram">
+                            <img src="./img/instagram.svg" alt="Instagram">
+                        </div>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCV19S75luLzVL6Ef0jqKFmA">
+                        <div class="button youtube">
+                            <img src="./img/youtube.svg" alt="Youtube">
+                        </div>
+                    </a>
+                    <a href="https://github.com/car10srodela">
+                        <div class="button github">
+                            <img src="./img/github.svg" alt="Github">
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </section>
+    </div>
+</body>
+</html>

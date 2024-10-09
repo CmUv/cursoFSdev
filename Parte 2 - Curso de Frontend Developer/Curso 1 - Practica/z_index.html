@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"> <!-- Define la codificación de caracteres como UTF-8 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Asegura compatibilidad con IE -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ajusta el ancho para dispositivos móviles -->
+  <title>Z index</title>
+  <style>
+    /* Estilos generales para los divs, posicionándolos absolutamente */
+    div {
+      position: absolute;             /* Permite posicionar el elemento en relación con el contenedor más cercano que tenga position: relative, absolute o fixed */
+      background: palegoldenrod;     /* Color de fondo amarillo pálido */
+    }
+
+    /* Primer div con z-index más alto */
+    .one {
+      z-index: 5;                    /* Este div se mostrará por encima de otros con menor z-index */
+    }
+
+    /* Segundo div con z-index menor que .one */
+    .two {
+      z-index: 4;                    /* Este div se mostrará debajo de .one */
+    }
+
+    /* Div rojo */
+    .red {
+      width: 20px;                   /* Ancho de 20px */
+      height: 20px;                  /* Alto de 20px */
+      background: red;               /* Color de fondo rojo */
+      z-index: 5;                    /* Este div tiene el mismo z-index que .one, pero su posición en el DOM puede afectar la visualización */
+    }
+
+    /* Div azul */
+    .blue {
+      width: 20px;                   /* Ancho de 20px */
+      height: 20px;                  /* Alto de 20px */
+      background: blue;              /* Color de fondo azul */
+      z-index: 4;                    /* Este div se mostrará debajo de .red y .yellow */
+    }
+
+    /* Div amarillo */
+    .yellow {
+      width: 20px;                   /* Ancho de 20px */
+      height: 20px;                  /* Alto de 20px */
+      background: yellow;            /* Color de fondo amarillo */
+      z-index: 6;                    /* Este div se mostrará por encima de los otros divs */
+    }
+  </style>
+</head>
+<body>
+  <!-- Comentado: Ejemplo de divs con z-index -->
+  <!-- <div class="one">Carlos</div>
+  <div class="two">Practica</div> -->
+
+  <section>
+    <!-- Div rojo con z-index 5 -->
+    <div class="red">Red</div>
+    <!-- Div azul con z-index 4 que contiene el div amarillo -->
+    <div class="blue">Blue
+      <!-- Div amarillo con z-index 6 que se muestra por encima del div azul -->
+      <div class="yellow">Yellow</div>
+    </div>
+  </section>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"> <!-- Codificación de caracteres, usando UTF-8 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Asegura compatibilidad con IE -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ajusta el ancho del sitio para dispositivos móviles -->
+  <title>Posicionamiento</title>
+  <style>
+    /* Contenedor principal con un tamaño y posición relativa */
+    .container {
+      width: 200px;              /* Ancho del contenedor */
+      height: 200px;             /* Alto del contenedor */
+      background: pink;          /* Fondo color rosa */
+      position: relative;        /* El posicionamiento relativo permite mover el contenedor sin afectar el flujo normal del documento */
+      top: 20px;                 /* Desplaza el contenedor 20px hacia abajo desde su posición original */
+    }
+
+    /* Elemento hijo dentro del contenedor con posicionamiento absoluto */
+    .item {
+      width: 20px;               /* Ancho del elemento */
+      height: 20px;              /* Alto del elemento */
+      background: hotpink;       /* Fondo color rosa fuerte */
+      position: absolute;        /* Posición absoluta dentro de su contenedor padre (position: relative) */
+      right: 0;                  /* Desplaza el elemento hacia el borde derecho del contenedor */
+    }
+
+    /* Barra de navegación fija en la parte superior de la página */
+    nav {
+      width: 100%;               /* La barra de navegación ocupa todo el ancho de la pantalla */
+      height: 60px;              /* Altura de la barra de navegación */
+      background: LightCyan;     /* Fondo color cian claro */
+      position: fixed;           /* La barra se mantiene fija en la parte superior de la ventana */
+      top: 0;                    /* Posicionada en la parte superior de la pantalla */
+    }
+
+    /* Estilo para los elementos <p> dentro de las listas <ul>, usando posicionamiento sticky */
+    ul p {
+      position: sticky;          /* El párrafo se pega en la parte superior del viewport al hacer scroll */
+      top: 0;                    /* Se mantiene en la parte superior del contenedor cuando el usuario hace scroll */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra de navegación fija -->
+  <nav></nav>
+
+  <!-- Contenedor con posicionamiento relativo -->
+  <div class="container">
+    <!-- Elemento hijo dentro del contenedor con posicionamiento absoluto -->
+    <div class="item"></div>
+  </div>
+
+  <!-- Párrafo explicativo sobre las partes de una computadora -->
+  <p>¿Cuáles son las partes de una computadora?<br>
+    Una computadora está formada por diversos componentes, cada uno cumpliendo una función específica para su correcto funcionamiento.<br> 
+    Entre los más importantes se encuentra el procesador (CPU), que actúa como el cerebro de la computadora, ejecutando instrucciones y controlando todas las operaciones.<br> 
+    La memoria RAM, por otro lado, almacena temporalmente los datos que la CPU necesita acceder rápidamente.<br><br>
+
+    ¿Por qué es importante conocer estas partes?<br>
+    Comprender las partes de una computadora es esencial para elegir la máquina adecuada a nuestras necesidades.<br>
+    La capacidad de almacenamiento, proporcionada por el disco duro o una unidad de estado sólido (SSD), afecta la cantidad de archivos que podemos guardar,<br>
+    mientras que la tarjeta gráfica es clave si trabajas con gráficos, videojuegos o edición de video.<br> 
+    También está la placa madre, que conecta todos los componentes entre sí.<br><br>
+
+    ¿De dónde provienen estos componentes?<br>
+    A lo largo de la historia de la computación, los avances en hardware han revolucionado el mundo tecnológico.<br>
+    En los primeros días, las computadoras ocupaban habitaciones enteras, y su capacidad de procesamiento era limitada.<br>
+    Con la invención de los transistores y microprocesadores en los años 60 y 70, las computadoras se hicieron más pequeñas, poderosas y accesibles para todos.<br>
+    Hoy en día, marcas como Intel y AMD fabrican los procesadores más avanzados del mercado.<br><br>
+
+    La evolución de las partes de una computadora no solo ha mejorado la velocidad y capacidad de procesamiento,<br>
+    sino también su eficiencia energética y el tamaño, permitiendo que dispositivos como laptops y teléfonos móviles<br>
+    tengan una potencia equivalente a la de las computadoras de escritorio de hace solo unas décadas.</p>
+
+  <!-- Listas con elementos de ejemplo (partes de una computadora) -->
+  <ul>
+    <p>PARTES DE UNA COMPUTADORA</p>
+    <li>MONITOR</li>
+    <li>TARJETA MADRE</li>
+    <li>TARJETA GRAFICA</li>
+  </ul>
+
+  <!-- Varias listas repetidas para crear más contenido y simular un desplazamiento largo -->
+  <ul>
+    <p>PARTES DE UNA COMPUTADORA</p>
+    <li>MONITOR</li>
+    <li>TARJETA MADRE</li>
+    <li>TARJETA GRAFICA</li>
+  </ul>
+
+  <!-- Más listas para simular desplazamiento -->
+  <!-- Las listas siguen el mismo formato con una descripción de las partes de la computadora -->
+  <ul>
+    <p>PARTES DE UNA COMPUTADORA</p>
+    <li>MONITOR</li>
+    <li>TARJETA MADRE</li>
+    <li>TARJETA GRAFICA</li>
+  </ul>
+
+  <!-- Más listas idénticas repetidas -->
+  <ul>
+    <p>PARTES DE UNA COMPUTADORA</p>
+    <li>MONITOR</li>
+    <li>TARJETA MADRE</li>
+    <li>TARJETA GRAFICA</li>
+  </ul>
+
+  <!-- Continúa con más contenido similar -->
+  <ul>
+    <p>PARTES DE UNA COMPUTADORA</p>
+    <li>MONITOR</li>
+    <li>TARJETA MADRE</li>
+    <li>TARJETA GRAFICA</li>
+  </ul>
+
+</body>
+</html>

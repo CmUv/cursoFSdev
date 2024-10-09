@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cómo Crear una Tarjeta de Presentación</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Arial', sans-serif; /* Fuente básica */
+            background-color: #f0f0f0; /* Fondo suave */
+            padding: 20px; /* Espacio alrededor del contenido */
+            color: #333; /* Color del texto */
+        }
+
+        /* Estilos para el contenedor del tutorial */
+        .tutorial-container {
+            max-width: 800px; /* Ancho máximo del contenedor */
+            margin: auto; /* Centra el contenedor */
+            background: #001aff42; /* Fondo blanco */
+            padding: 20px; /* Espacio interno */
+            border-radius: 8px; /* Bordes redondeados */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+        }
+
+        /* Estilo para los títulos */
+        h1, h2 {
+            color: #4B0082; /* Color elegante para títulos */
+        }
+
+        /* Estilo para pasos */
+        .step {
+            background: #e8eaf6; /* Fondo ligeramente morado */
+            padding: 15px; /* Espacio interno */
+            margin: 10px 0; /* Margen vertical */
+            border-radius: 5px; /* Bordes redondeados */
+        }
+
+        /* Estilo para imágenes */
+        img {
+            max-width: 100%; /* Ancho máximo para imágenes */
+            height: auto; /* Mantiene la proporción de las imágenes */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="tutorial-container">
+        <h1>Cómo Crear una Tarjeta de Presentación</h1>
+        <p>En este tutorial, aprenderás a crear una tarjeta de presentación simple pero elegante usando HTML y CSS. No se requieren programas especiales; solo un editor de texto y un navegador web. ¡Vamos a empezar!</p>
+
+        <h2>Requisitos</h2>
+        <ul>
+            <li>Un editor de texto (como Visual Studio Code, Sublime Text, o Notepad).</li>
+            <li>Un navegador web (Chrome, Firefox, Edge, etc.).</li>
+        </ul>
+
+        <h2>Paso a Paso</h2>
+
+        <div class="step">
+            <h3>Paso 1: Estructura HTML</h3>
+            <p>Crea un archivo HTML y escribe la siguiente estructura básica:</p>
+            <pre>
+<code>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjeta de Presentación</title>
+</head>
+<body>
+    <div class="tarjeta">
+        <!-- Contenido de la tarjeta -->
+    </div>
+</body>
+</html>
+</code>
+            </pre>
+        </div>
+
+        <div class="step">
+            <h3>Paso 2: Contenido de la Tarjeta</h3>
+            <p>Dentro del div con la clase "tarjeta", agrega el siguiente contenido:</p>
+            <pre>
+<code>
+<div class="tarjeta">
+    <h1>Carlos Ureña</h1>
+    <h3>Desarrollador Web</h3>
+    <p>📍 Ciudad de México</p>
+    <p>✉️ carlos@example.com</p>
+    <p>🌐 www.carlosurena.com</p>
+</div>
+</code>
+            </pre>
+        </div>
+
+        <div class="step">
+            <h3>Paso 3: Estilos CSS</h3>
+            <p>Crea un archivo CSS y añade los siguientes estilos para dar formato a tu tarjeta:</p>
+            <pre>
+<code>
+.tarjeta {
+    background: #ffffff; /* Fondo blanco */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    padding: 20px; /* Espaciado interno */
+    text-align: center; /* Centrar texto */
+    width: 300px; /* Ancho de la tarjeta */
+    margin: auto; /* Centrar tarjeta en la página */
+}
+</code>
+            </pre>
+        </div>
+
+        <div class="step">
+            <h3>Paso 4: Visualiza tu Tarjeta</h3>
+            <p>Guarda ambos archivos y abre el archivo HTML en tu navegador. Deberías ver tu tarjeta de presentación con el estilo aplicado.</p>
+        </div>
+
+        <div class="step">
+            <h3>Paso 5: Personaliza</h3>
+            <p>¡Siéntete libre de personalizar tu tarjeta cambiando los colores, fuentes y contenido! Aquí hay un ejemplo de CSS que puedes usar:</p>
+            <pre>
+<code>
+.tarjeta {
+    background: #f0f0f0; /* Fondo gris claro */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra más prominente */
+    padding: 30px; /* Espaciado interno mayor */
+    text-align: center; /* Centrar texto */
+    width: 350px; /* Ancho de la tarjeta */
+    margin: auto; /* Centrar tarjeta en la página */
+}
+</code>
+            </pre>
+        </div>
+    </div>
+</body>
+</html>

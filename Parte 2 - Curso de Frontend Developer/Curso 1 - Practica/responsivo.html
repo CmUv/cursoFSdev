@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"> <!-- Define la codificación de caracteres como UTF-8 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Asegura compatibilidad con Internet Explorer -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura el ancho y la escala para dispositivos móviles -->
+  <title>Diseño Responsivo</title> <!-- Título de la página -->
+  
+  <style>
+    /* Estilo general para el div */
+    div {
+      background: purple; /* Color de fondo púrpura por defecto */
+      color: white;       /* Color del texto en blanco */
+      font-size: 2rem;    /* Tamaño de fuente grande */
+      text-align: center;  /* Centrar texto */
+      padding: 20px;      /* Espaciado interno */
+      transition: background 0.3s; /* Transición suave para el color de fondo */
+    }
+
+    /* Media query para pantallas pequeñas */
+    @media (max-width: 300px) {
+      div {
+        background: red; /* Cambia el color de fondo a rojo en pantallas pequeñas */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div>
+    Diseño responsivo <!-- Contenido del div -->
+  </div>
+</body>
+</html>

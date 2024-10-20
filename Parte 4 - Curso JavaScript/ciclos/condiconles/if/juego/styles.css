@@ -1,0 +1,99 @@
+/* Definición de variables CSS para mantener colores consistentes */
+:root {
+    --Azul-oscuro: #2a1ed1;
+    --Amarillo-anaranjado: #fcba3e;
+    --Blanco: #f8f7f9;
+    --Azul: #2f2692;
+    --Verde-correcto: #4CAF50;
+    --Rojo-error: #FF5252;
+    --Sombra: rgb(0, 0, 0);
+}
+
+/* Estilo general del cuerpo de la página */
+body {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('https://images.pexels.com/photos/5428829/pexels-photo-5428829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Contenedor del juego */
+#game {
+    max-width: 600px;
+    width: 100%;
+    padding: 30px;
+    border-radius: 50px;
+    box-shadow: 0 9px 20px var(--Sombra);
+    background-color: var(--Azul);
+    color: var(--Blanco);
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+h2 {
+    margin-bottom: 10px;
+    font-size: 2rem;
+    color: var(--Amarillo-anaranjado);
+}
+
+p {
+    margin: 10px 0;
+}
+
+/* Estilo del campo de entrada de número */
+input[type="number"] {
+    width: 80px;
+    padding: 10px;
+    border-radius: 50px;
+    border: 1px solid var(--Blanco);
+    margin-right: 10px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+input[type="number"]:focus {
+    border-color: var(--Sombra);
+}
+
+/* Estilo del botón */
+input[type="button"] {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: var(--Amarillo-anaranjado);
+    color: var(--Azul-oscuro);
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="button"]:hover {
+    color: var(--Blanco);
+    background-color: var(--Verde-correcto);
+}
+
+/* Mensaje de resultado */
+#message {
+    margin-top: 15px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

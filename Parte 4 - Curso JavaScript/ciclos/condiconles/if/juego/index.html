@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es"> 
+<!-- Define el tipo de documento como HTML5 y establece el idioma como español -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina el Número!</title>
+    
+    <!-- Enlace al archivo CSS externo -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="game">
+        <h2>¿PUEDES ADIVINAR EL NÚMERO?</h2> <!-- Título del juego -->
+        <p>Ingresa un número entre el 1 y el 10</p> <!-- Instrucciones al usuario -->
+
+        <label>
+            <input type="number" id="guess" min="1" max="10" placeholder="Número">
+            <!-- Campo de entrada para el número con un rango de 1 a 10 -->
+            <input type="button" value="¡Adivinar!" onclick="checkGuess()">
+            <!-- Botón que llama a la función checkGuess() cuando se hace clic -->
+        </label>
+
+        <p id="message"></p> <!-- Mensaje que mostrará el resultado del intento -->
+    </div>
+
+    <!-- Enlace al archivo JavaScript que contiene la lógica del juego -->
+    <script src="juego2.js"></script>
+</body>
+</html>

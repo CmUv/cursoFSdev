@@ -1,90 +1,95 @@
 body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 10%;
-  }
-  
-  input,
-  textarea,
-  select,
-  button {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border-radius: 4px;
-    border: 1px solid #ddd;
-    box-sizing: border-box;
-  }
-  
-  button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
-  button:focus {
-    outline: none;
-  }
-  
-  button:hover,
-  button:active {
-    background: #0056b3;
-  }
-  
-  .form-control {
-    margin: 0.5rem 0;
-  }
-  
+  font-family: sans-serif;
+  margin: 0;
+  padding: 10%;
+}
+
+/* Estilos para inputs, textarea, select y button */
+input,
+textarea,
+select,
+button {
+  width: 100%; /* Ancho completo */
+  padding: 8px; /* Espaciado interno */
+  margin-top: 5px; /* Margen superior */
+  border-radius: 4px; /* Bordes redondeados */
+  border: 1px solid #ddd; /* Bordes gris claro */
+  box-sizing: border-box; /* Incluye padding y border en el tamaño total */
+}
+
+button {
+  background-color: #007bff; /* Color de fondo */
+  color: white; /* Color de texto */
+  border: none; /* Sin borde */
+  cursor: pointer; /* Cambiar cursor al pasar el mouse */
+}
+
+button:focus {
+  outline: none; /* Sin contorno en el enfoque */
+}
+
+/* Cambios de color en hover y active */
+button:hover,
+button:active {
+  background: #0056b3; /* Color de fondo al pasar el mouse */
+}
+
+.form-control {
+  margin: 0.5rem 0; /* Margen entre controles de formulario */
+}
+
+/* Estilos para la lista de publicaciones */
+.posts {
+  list-style: none; /* Sin viñetas */
+  margin: 0; /* Sin márgenes */
+  padding: 0; /* Sin padding */
+  display: grid; /* Usar grid para disposición */
+  grid-template-columns: repeat(1, 1fr); /* Por defecto, una columna */
+  gap: 1rem; /* Espacio entre columnas */
+}
+
+.post-item {
+  margin: 1rem 0; /* Margen vertical */
+  border-radius: 4px; /* Bordes redondeados */
+  border: 1px solid #ddd; /* Borde gris claro */
+  padding: 1rem; /* Espaciado interno */
+}
+
+.post-item h2,
+.post-item p {
+  margin: 0.5rem 0; /* Margen entre elementos */
+}
+
+.post-item h2 {
+  font-size: 1rem; /* Tamaño de fuente del título */
+  color: #414141; /* Color del título */
+}
+
+.post-item p {
+  font-size: 0.85rem; /* Tamaño de fuente del contenido */
+  color: #666; /* Color del contenido */
+}
+
+.post-item button {
+  background: #f72222; /* Color de fondo para botón dentro del post */
+}
+
+.post-item button:hover,
+.post-item button:active {
+  background: #dd2929; /* Color de fondo al pasar el mouse en el botón del post */
+}
+
+/* Media queries para diseño responsivo */
+@media (min-width: 600px) {
+  /* Tablet */
   .posts {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 1rem; /* Espacio entre los elementos */
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas en tabletas */
   }
-  
-  .post-item {
-    margin: 1rem 0;
-    border-radius: 4px;
-    border: 1px solid #ddd;
-    padding: 1rem;
+}
+
+@media (min-width: 900px) {
+  /* Desktop */
+  .posts {
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas en escritorio */
   }
-  
-  .post-item h2,
-  .post-item p {
-    margin: 0.5rem 0;
-  }
-  
-  .post-item h2 {
-    font-size: 1rem;
-    color: #414141;
-  }
-  
-  .post-item p {
-    font-size: 0.85rem;
-    color: #666;
-  }
-  
-  .post-item button {
-    background: #f72222; /* Color del botón de eliminar */
-  }
-  
-  .post-item button:hover,
-  .post-item button:active {
-    background: #dd2929; /* Color del botón de eliminar al pasar el mouse */
-  }
-  
-  @media (min-width: 600px) {
-    .posts {
-      grid-template-columns: repeat(2, 1fr); /* Dos columnas en tabletas */
-    }
-  }
-  
-  @media (min-width: 900px) {
-    .posts {
-      grid-template-columns: repeat(3, 1fr); /* Tres columnas en escritorio */
-    }
-  }
-  
+}

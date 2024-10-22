@@ -1,0 +1,106 @@
+/* Estilos generales del body */
+body {
+    font-family: sans-serif; /* Fuente sans-serif */
+    margin: 0; /* Sin márgenes en el body */
+    padding: 10%; /* Espaciado de 10% alrededor del contenido */
+  }
+  
+  /* Estilos para inputs, textarea, select y botones */
+  input,
+  textarea,
+  select,
+  button {
+    width: 100%; /* Ancho completo */
+    padding: 8px; /* Espaciado interno */
+    margin-top: 5px; /* Margen superior */
+    border-radius: 4px; /* Bordes redondeados */
+    border: 1px solid #ddd; /* Borde gris claro */
+    box-sizing: border-box; /* Incluye padding y borde en el ancho total */
+  }
+  
+  /* Estilos para el botón */
+  button {
+    background-color: #007bff; /* Color de fondo azul */
+    color: white; /* Texto blanco */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+  }
+  
+  /* Estilo para eliminar el contorno al hacer foco en el botón */
+  button:focus {
+    outline: none; /* Sin contorno */
+  }
+  
+  /* Efecto al pasar el mouse o hacer clic en el botón */
+  button:hover,
+  button:active {
+    background: #0056b3; /* Color de fondo más oscuro al pasar el mouse */
+  }
+  
+  /* Clase para controlar el margen de los controles del formulario */
+  .form-control {
+    margin: 0.5rem 0; /* Margen superior e inferior */
+  }
+  
+  /* Estilos para la lista de posts */
+  .posts {
+    list-style: none; /* Sin viñetas */
+    margin: 0; /* Sin márgenes */
+    padding: 0; /* Sin relleno */
+    display: grid; /* Usar grid para disposición */
+    grid-template-columns: repeat(1, 1fr); /* Una columna por defecto */
+    gap: 1rem; /* Espacio entre columnas */
+  }
+  
+  /* Estilos para cada post individual */
+  .post-item {
+    margin: 1rem 0; /* Margen vertical */
+    border-radius: 4px; /* Bordes redondeados */
+    border: 1px solid #ddd; /* Borde gris claro */
+    padding: 1rem; /* Espaciado interno */
+  }
+  
+  /* Estilos para los títulos y párrafos de los posts */
+  .post-item h2,
+  .post-item p {
+    margin: 0.5rem 0; /* Margen superior e inferior */
+  }
+  
+  /* Estilos para el título del post */
+  .post-item h2 {
+    font-size: 1rem; /* Tamaño de fuente */
+    color: #414141; /* Color del texto */
+  }
+  
+  /* Estilos para el cuerpo del post */
+  .post-item p {
+    font-size: 0.85rem; /* Tamaño de fuente más pequeño */
+    color: #666; /* Color del texto más claro */
+  }
+  
+  /* Estilos para el botón dentro del post */
+  .post-item button {
+    background: #f72222; /* Color de fondo rojo */
+  }
+  
+  /* Efecto al pasar el mouse o hacer clic en el botón dentro del post */
+  .post-item button:hover,
+  .post-item button:active {
+    background: #dd2929; /* Color de fondo más oscuro al pasar el mouse */
+  }
+  
+  /* Media queries para adaptar el diseño a diferentes tamaños de pantalla */
+  @media (min-width: 600px) {
+    /* Estilos para tabletas */
+    .posts {
+      grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+    }
+  }
+  
+  @media (min-width: 900px) {
+    /* Estilos para escritorio */
+    .posts {
+      grid-template-columns: repeat(3, 1fr); /* Tres columnas */
+    }
+  }
+  

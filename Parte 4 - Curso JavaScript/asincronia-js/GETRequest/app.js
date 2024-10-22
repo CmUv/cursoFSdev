@@ -1,72 +1,61 @@
-const listElement = document.querySelector(".posts"); // Contenedor de publicaciones
-const form = document.querySelector("#postForm"); // Formulario para nuevas publicaciones
-const fetchButton = document.querySelector("#fetchButton"); // Botón para obtener contenido
 
-// Función para enviar solicitudes HTTP
+
+
+// Selección de elementos del DOM
+const listElement = document.querySelector(".posts"); // Elemento donde se mostrarán los posts
+const postTemplate = document.getElementById("single-post"); // Plantilla del post (no se utiliza en el código actual)
+const form = document.querySelector("#new-post form"); // Formulario para crear un nuevo post
+const fetchButton = document.querySelector("#available-posts button"); // Botón para obtener posts
+const postList = document.querySelector("#posts-container"); // Contenedor para los posts
+
+// Función para enviar una solicitud HTTP
 function sendHTTPRequest(method, url, data) {
   return fetch(url, {
-    method: method,
-    body: JSON.stringify(data),
+    method: method, // Método HTTP (GET, POST, etc.)
+    body: JSON.stringify(data), // Datos a enviar en formato JSON
     headers: {
-      "Content-Type": "application/json",
+      "Content-Type": "application/json", // Tipo de contenido
     },
   }).then((response) => {
-    return response.json();
+    return response.json(); // Retorna la respuesta como JSON
   });
 }
 
-// Función para obtener publicaciones
-async function fetchPosts() {
+// Función asíncrona para obtener los posts
+async function fecthPosts() {
+  // Envío de la solicitud GET para obtener los posts
   const responseData = await sendHTTPRequest(
     "GET",
-    "https://jsonplaceholder.typicode.com/posts"
+    "https://gist.githubusercontent.com/CmUv/0414972a0b752c0be992fe54506a9ea7/raw/8cf8c2428ba5aef54aeae36d0d86f740f284a41f"
+    //"https://jsonplaceholder.typicode.com/posts"
   );
-  console.log(responseData);
-  const listOfPosts = responseData;
+  console.log(responseData); // Muestra los datos obtenidos en la consola
+  const listOfPosts = responseData; // Almacena la lista de posts
 
-  // Limpiar publicaciones existentes antes de agregar nuevas
-  listElement.innerHTML = '';
-
+  // Itera sobre cada post y crea su representación en el DOM
   for (const post of listOfPosts) {
-    const postContainer = document.createElement("article");
-    postContainer.id = post.id;
-    postContainer.classList.add("post-item");
+    const postContainer = document.createElement("article"); // Crea un nuevo artículo para el post
+    postContainer.id = post.id; // Asigna el id del post
+    postContainer.classList.add("post-item"); // Agrega la clase para estilos
 
-    const title = document.createElement("h2");
-    title.textContent = post.title;
+    const title = document.createElement("h2"); // Crea el elemento del título
+    title.textContent = post.title; // Asigna el título del post
 
-    const body = document.createElement("p");
-    body.textContent = post.body;
+    const body = document.createElement("p"); // Crea el elemento del cuerpo
+    body.textContent = post.body; // Asigna el contenido del post
 
-    const button = document.createElement("button");
-    button.textContent = "DELETE Content"; // Botón de eliminar
+    const button = document.createElement("button"); // Crea el botón para eliminar
+    button.textContent = "DELETE Content"; // Asigna texto al botón
 
+    // Agrega los elementos al contenedor del post
     postContainer.append(title);
     postContainer.append(body);
     postContainer.append(button);
 
+    // Agrega el contenedor del post a la lista de posts
     listElement.append(postContainer);
   }
 }
 
-// Manejar la acción de enviar el formulario
-form.addEventListener("submit", (event) => {
-  event.preventDefault(); // Prevenir el comportamiento predeterminado del formulario
-
-  const titleValue = document.getElementById("title").value; // Obtener título
-  const contentValue = document.getElementById("content").value; // Obtener contenido
-
-  // Aquí puedes enviar una nueva publicación usando sendHTTPRequest
-  sendHTTPRequest("POST", "https://jsonplaceholder.typicode.com/posts", {
-    title: titleValue,
-    body: contentValue,
-    userId: 1 // ID de usuario ficticio
-  }).then(() => {
-    // Limpiar el formulario después de enviar
-    form.reset();
-    fetchPosts(); // Refrescar la lista de publicaciones
-  });
-});
-
-// Agregar evento al botón de obtener publicaciones
-fetchButton.addEventListener("click", fetchPosts); // Llamar a la función al hacer clic
+// Agrega un evento al botón para obtener los posts al hacer clic
+fetchButton.addEventListener("click", fecthPosts);
